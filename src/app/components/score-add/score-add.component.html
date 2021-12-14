@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Create New Score</h2>
+    <form class="row g-3"  [formGroup]="scoreForm" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="email">
+        </div>
+        <div class="col-md-6">
+          <label for="subject" class="form-label">Subject</label>
+          <select id="subject" class="form-select" id="subject" name="subject" formControlName="subject">
+            <option *ngFor="let subject of subjectList" value="{{subject.name}}">{{subject.name}}</option>
+          </select>
+        </div>
+        <div class="col-1">
+          <label for="score" class="form-label">Score</label>
+          <input type="text" class="form-control" id="value" placeholder="1 to 10" id="value" name="value" formControlName="value">
+        </div>
+        <div class="col-11">
+            
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!scoreForm.valid">Save Score</button>
+        </div>
+    </form>
+</div>

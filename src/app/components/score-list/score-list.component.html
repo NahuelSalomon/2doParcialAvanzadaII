@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Scores List</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Career</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let score of scoreList">
+            <th scope="row">{{ score.student.studentId }}</th>
+            <td>{{ score.student.career.name }}</td>
+            <td>{{ score.student.firstName }}</td>
+            <td>{{ score.student.lastName }}</td>
+            <td>{{ score.subject.name }} </td>
+            <td>{{ score.value }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
